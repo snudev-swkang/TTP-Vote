@@ -1,5 +1,14 @@
 <script>
     import TTPVote from "../components/TTPVote.svelte";
+    import { isSignedIn } from '../stores.js';
+
+    // console.log($isSignedIn);
+
+    // function handleSignOut() {
+    //     // 로그아웃 로직 수행
+    //     isSignedIn.set(false);
+    // }
+    
 </script>
 
 
@@ -11,7 +20,13 @@
 <h2>Trusted Third Party Voter</h2>
 <p>by @swkang, <a href="https://mmlab.snu.ac.kr" target="_blank">SNU MMLAB</a></p>
 <br/>
-<p>
-    <TTPVote message="This is a message from the main page" />
-</p>
+<!-- {#if $isSignedIn}
+    <button class="btn btn-primary">Create</button>
+    <button class="btn btn-primary" on:click={handleSignOut}>Sign Out</button>
+{:else}
+    <a href="/signin"><button class="btn btn-primary">Sign In</button></a>
+{/if} -->
+<div>
+    <TTPVote />
+</div>
 
