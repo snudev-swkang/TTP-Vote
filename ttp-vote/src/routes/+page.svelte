@@ -1,6 +1,12 @@
 <script>
-    import TTPVote from "../components/TTPVote.svelte";
     import { isSignedIn } from '../stores.js';
+    import TTPVote from "../components/TTPVote.svelte";
+    
+    import { goto } from '$app/navigation';
+
+    function gotoPage(path) {
+        goto('/'+path);
+    }
 
     // console.log($isSignedIn);
 
@@ -27,6 +33,6 @@
     <a href="/signin"><button class="btn btn-primary">Sign In</button></a>
 {/if} -->
 <div>
-    <TTPVote />
+    <button on:click={() => gotoPage('create-vote')}>Create</button>
 </div>
 
